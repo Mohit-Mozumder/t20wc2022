@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\HomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,6 +13,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+//START OF ADMIN 
+
+Route::get('/admin', [AdminController::class, 'news']);
+
+//END OF ADMIN 
+
+Route::get('/', [HomeController::class, 'home']);
