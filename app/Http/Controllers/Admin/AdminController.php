@@ -7,10 +7,10 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
-    public function news()
+    public function index()
 	{
 		
-      return "news";
+      return view('admin.dashboard');
 		 
 	}	
 }

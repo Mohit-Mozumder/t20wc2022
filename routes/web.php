@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\Admin\TeamController;
+use App\Http\Controllers\Admin\PlayersController;
+use App\Http\Controllers\Admin\NewsController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\HomeController;
 /*
@@ -16,7 +19,10 @@ use App\Http\Controllers\HomeController;
 
 //START OF ADMIN 
 
-Route::get('/admin', [AdminController::class, 'news']);
+Route::get('/admin', [AdminController::class, 'index']);
+Route::resource('/teams', Admin\TeamController::class);
+Route::resource('/news', Admin\NewsController::class);
+Route::resource('/players', Admin\PlayersController::class);
 
 //END OF ADMIN 
 
