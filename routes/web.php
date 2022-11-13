@@ -19,11 +19,14 @@ use App\Http\Controllers\HomeController;
 
 //START OF ADMIN 
 
-Route::get('/admin', [AdminController::class, 'index']);
-Route::resource('/teams', Admin\TeamController::class);
-Route::resource('/news', Admin\NewsController::class);
-Route::resource('/players', Admin\PlayersController::class);
 
+
+Route::group(['prefix' => 'admin', 'as' => 'admin.'],function (){
+    Route::get('/', [AdminController::class, 'index']);
+    Route::resource('/teams', Admin\TeamController::class);
+    Route::resource('/news', Admin\NewsController::class);
+    Route::resource('/players', Admin\PlayersController::class);
+});
 //END OF ADMIN 
 
 Route::get('/', [HomeController::class, 'home']);

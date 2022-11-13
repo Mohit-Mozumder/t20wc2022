@@ -1,5 +1,5 @@
 @extends('layouts.admin_master')
-@section('title')Dashboard @endsection
+@section('title')Teams @endsection
 @section('content')
 <div id="wrapper">
 
@@ -21,8 +21,27 @@
             <div class="container-fluid">
 
                 <!-- Page Heading -->
-                <h1 class="h3 mb-4 text-gray-800">Blank Page</h1>
+                <h1 class="h3 mb-4 text-gray-800">Index of team</h1>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Team Name</th>
+                            <th>Point</th>
+                            <th>Latest Squad</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($teams as $team)
+                        <tr>
+                            <td>{{ $team->name }}</td>
+                            <td>{{ $team->point }}</td>
+                            <td>{{ $team->latest_squad }}</td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
             </div>
+
             <!-- /.container-fluid -->
 
         </div>

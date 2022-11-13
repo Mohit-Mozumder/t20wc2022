@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Team;
 
 class TeamController extends Controller
 {
@@ -13,7 +14,8 @@ class TeamController extends Controller
      */
     public function index()
     {
-        //
+        $teams = Team::all();
+        return view('admin.teams.index', compact('teams'));
     }
 
     /**
@@ -23,7 +25,7 @@ class TeamController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.teams.create');
     }
 
     /**
@@ -34,7 +36,7 @@ class TeamController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd('abc');
     }
 
     /**
@@ -56,7 +58,7 @@ class TeamController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('admin.teams.edit');
     }
 
     /**

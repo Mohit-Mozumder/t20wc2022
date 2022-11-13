@@ -17,7 +17,7 @@ class CreateTeamsTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->integer('point');
-            $table->string('squad');
+            $table->text('latest_squad');
             $table->timestamps();
         });
     }
