@@ -61,8 +61,7 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="{{ route('teams.index') }}">Add New Teams</a>
-                        <a class="collapse-item" href="{{ route('teams.edit') }}">Edit Teams/point</a>
-                        <a class="collapse-item" href="{{ route('teams.show') }}">View Teams/points</a>
+                       
                     </div>
                 </div>
             </li>
