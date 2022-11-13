@@ -36,7 +36,17 @@ class TeamController extends Controller
      */
     public function store(Request $request)
     {
-        dd('abc');
+        $request->validate([
+            'name' => ['required'],
+            'point' => ['required'],
+            'latest_squad' => ['required'],
+        ]);
+
+        if (Team::create($request->all())) {
+            return redirect(route('admin.teams.index'))->with(['success' => 'Team added successfully']);
+        } else {
+            return back()->with(['error' => 'Something went wrong!!! Please try again']);
+        }
     }
 
     /**
@@ -58,7 +68,8 @@ class TeamController extends Controller
      */
     public function edit($id)
     {
-        return view('admin.teams.edit');
+        $team = Team::find($id);
+        return view('admin.teams.edit', compact('team'));
     }
 
     /**
@@ -70,8 +81,17 @@ class TeamController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $team = Team::find($id);
+        $team->name = $request->name;
+        $team->point = $request->point;
+        $team->latest_squad = $request->latest_squad;
+        if ($team->save()) {
+            return redirect(route('admin.teams.edit', $team->id))->with(['success' => 'Updated successfully']);
+        } else {
+            return back()->with(['error' => 'Something went wrong!!! Please try again']);
+        }
     }
+    
 
     /**
      * Remove the specified resource from storage.
@@ -81,6 +101,11 @@ class TeamController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $team = Team::find($id);
+        if ($team->delete()) {
+            return redirect(route('admin.teams.index', $team->id))->with(['success' => 'Deleted successfully']);
+        } else {
+            return back()->with(['error' => 'Something went wrong!!! Please try again']);
+        }
     }
 }
