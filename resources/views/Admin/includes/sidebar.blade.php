@@ -46,9 +46,8 @@
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="{{ route('admin.players.index') }}">Add New Players</a>
-                <a class="collapse-item" href="cards.html">Edit Players</a>
-                <a class="collapse-item" href="cards.html">View Players</a>
+                <a class="collapse-item" href="{{ route('admin.players.index') }}">Player List</a>
+                <a class="collapse-item" href="{{ route('admin.players.create') }}">Add Player</a>
             </div>
         </div>
     </li>
