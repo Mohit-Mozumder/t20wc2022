@@ -48,12 +48,12 @@ class PlayersController extends Controller
             'innings' => ['required'], 
             'total_runs' => ['required'],
             'career_best_bowling' => ['required'],
-            '50s' => ['required'],
-            '100s' => ['required'], 
+            '_50s' => ['required'],
+            '_100s' => ['required'], 
             'career_best_batting' => ['required'],
             'wickets' => ['required'],
-            '5_wickets' => ['required'],
-            'econmoy' => ['required'],
+            '_5_wickets' => ['required'],
+            'economy' => ['required'],
             'career_best_bowling' => ['required'],
             'photo' => ['required'],
             'career' => ['required'],
@@ -76,7 +76,8 @@ class PlayersController extends Controller
      */
     public function show($id)
     {
-        //
+        $players = Player::all();
+        return view('admin.players.show', compact('players'));
     }
 
     /**

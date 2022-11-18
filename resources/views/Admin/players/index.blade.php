@@ -35,7 +35,7 @@
                         <tr>
                             <td>{{ $player->name }}</td>
                             <td>{{ $player->point }}</td>
-                            <td> <a href="{{route('admin.players.edit', $player->id)}}">More info</a> </td>
+                            <td> <a href="{{route('admin.players.show', $player->id)}}">More info</a> </td>
                             <td> <a href="{{route('admin.players.edit', $player->id)}}">Edit</a> </td>
                             <td>     @include('admin.includes._confirm_delete',[
                                                         'id' => $player->id,

@@ -2,10 +2,8 @@
 
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-        <div class="sidebar-brand-icon rotate-n-15">
-            <i class="fas fa-laugh-wink"></i>
-        </div>
-        <div class="sidebar-brand-text mx-3">T20wc2022 <sup>admin</sup></div>
+        
+        <div class="sidebar-brand-text mx-3">T20wc2022 </div>
     </a>
 
     <!-- Divider -->
@@ -14,8 +12,7 @@
     <!-- Nav Item - Dashboard -->
     <li class="nav-item">
         <a class="nav-link" href="#">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Dashboard</span></a>
+            <span>Admin Pannel</span></a>
     </li>
 
     <!-- Divider -->
@@ -48,6 +45,20 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item" href="{{ route('admin.players.index') }}">Player List</a>
                 <a class="collapse-item" href="{{ route('admin.players.create') }}">Add Player</a>
+            </div>
+        </div>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true"
+            aria-controls="collapseFive">
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Match Schedule</span>
+        </a>
+        <div id="collapseFive" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="{{ route('admin.players.index') }}">Match List</a>
+                <a class="collapse-item" href="{{ route('admin.players.create') }}">Add Match</a>
             </div>
         </div>
     </li>

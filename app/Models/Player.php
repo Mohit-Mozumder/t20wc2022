@@ -9,7 +9,6 @@ class Player extends Model
     protected $fillable = ['name', 'born', 'birthplace', 'batting_style', 'bowling_style', 
     'icc_ranking_batting', 'icc_ranking_bowling', 'total_match', 'innings', 'total_runs', 
     'batting_average', '_50s', '_100s', 'career_best_batting','wickets', 
-    '_5_wickets', 'economy', 
-    'career_best_bowling', 'photo', 'career', 
-    'team_id'];
+    '_5_wickets', 'economy', 'career_best_bowling', 'photo', 'career', 
+    'team_id', 'slug'];
 }
