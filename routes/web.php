@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\Admin\MatchController;
 use App\Http\Controllers\Admin\TeamController;
+use App\Http\Controllers\Admin\ScoreController;
 use App\Http\Controllers\Admin\PlayersController;
 use App\Http\Controllers\Admin\NewsController;
 use App\Http\Controllers\Admin\AdminController;
@@ -24,8 +26,10 @@ use App\Http\Controllers\HomeController;
 Route::group(['prefix' => 'admin', 'as' => 'admin.'],function (){
     Route::get('/', [AdminController::class, 'index']);
     Route::resource('/teams', Admin\TeamController::class);
+    Route::resource('/scores', Admin\ScoreController::class);
     Route::resource('/news', Admin\NewsController::class);
     Route::resource('/players', Admin\PlayersController::class);
+    Route::resource('/matches', Admin\MatchController::class);
 });
 //END OF ADMIN 
 

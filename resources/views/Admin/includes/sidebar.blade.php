@@ -1,7 +1,7 @@
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
         
         <div class="sidebar-brand-text mx-3">T20wc2022 </div>
     </a>
@@ -19,6 +19,20 @@
     <hr class="sidebar-divider">
 
     <!-- Nav Item - Pages Collapse Menu -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSix" aria-expanded="true"
+            aria-controls="collapseSix">
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Live Score</span>
+        </a>
+        <div id="collapseSix" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="{{ route('admin.scores.create') }}">a</a>
+                <a class="collapse-item" href="{{ route('admin.scores.create') }}">b</a>
+            </div>
+        </div>
+    </li>
+
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
             aria-controls="collapseOne">
@@ -57,8 +71,8 @@
         </a>
         <div id="collapseFive" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="{{ route('admin.players.index') }}">Match List</a>
-                <a class="collapse-item" href="{{ route('admin.players.create') }}">Add Match</a>
+                <a class="collapse-item" href="{{ route('admin.matches.index') }}">Match List</a>
+                <a class="collapse-item" href="{{ route('admin.matches.create') }}">Add Match</a>
             </div>
         </div>
     </li>
