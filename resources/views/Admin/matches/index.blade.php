@@ -38,6 +38,7 @@
                             <td>{{ $match->schedule }}</td>
                             <td>{{ $match->venue }}</td>
                             <td> <a href="{{route('admin.matches.edit', $match->id)}}">Edit</a> </td>
+                            <td> <a href="{{route('admin.scores.create') }}?match_id={{ $match->id }}">Add score</a> </td>
                             <td>     @include('admin.includes._confirm_delete',[
                                                         'id' => $match->id,
                                                         'url' => route('admin.matches.destroy', $match->id),

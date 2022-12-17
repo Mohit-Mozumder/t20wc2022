@@ -31,6 +31,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'],function (){
     Route::resource('/players', Admin\PlayersController::class);
     Route::resource('/matches', Admin\MatchController::class);
 });
+
+
 //END OF ADMIN 
 
 Route::get('/', [HomeController::class, 'home']);

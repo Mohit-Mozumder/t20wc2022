@@ -1,5 +1,6 @@
 @extends('layouts.master')
 @section('title', 'Home')
 @section('content')
-homepage
+<h3> Live Score</h3>
+@include('frontend.score')
 @stop

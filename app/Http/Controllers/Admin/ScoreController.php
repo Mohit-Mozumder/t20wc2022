@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Score;
+use App\Models\Match;
 
 class ScoreController extends Controller
 {
@@ -13,7 +14,8 @@ class ScoreController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    {   
+        
         $scores = Score::all();
         return view('admin.scores.index', compact('scores'));
     }
@@ -23,9 +25,10 @@ class ScoreController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        return view('admin.scores.create');
+        $match = Match::find($request->match_id);
+        return view('admin.scores.create', compact('match'));
     }
 
     /**

@@ -27,14 +27,19 @@
                                 enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">match_id</label>
-                                    <input name="match_id" type="text" class="form-control"
-                                        value="{{ old('match_id') }}">
+                                    <label>Match Name</label><br>
+                                    <select class="form-select">
+                                        <option value="{{ $match->id }}">{{$match->description}}</option>
+                                    </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">batting_team_id</label>
-                                    <input name="batting_team_id" type="text" class="form-control"
-                                        value="{{ old('batting_team_id') }}">
+                                    <label>Batting Team Name</label><br>
+                                    <select class="form-select">
+                                        <option value="{{ $match->team_1_object->id }}">{{$match->team_1_object->name}}
+                                        </option>
+                                        <option value="{{ $match->team_2_object->id }}">{{$match->team_2_object->name}}
+                                        </option>
+                                    </select>
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">strike_player_id</label>
