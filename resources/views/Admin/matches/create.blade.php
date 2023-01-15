@@ -28,17 +28,46 @@
                             <form action="{{ route('admin.teams.store') }}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Name</label>
-                                    <input name="name" type="text" class="form-control" value="{{ old('name') }}">
+                                    <label>Team 1</label>
+                                    <select class="form-select">
+                                        @foreach($teams as $team)
+                                        <option value="{{ $team->name }}">{{$team->name}}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Point</label>
-                                    <input name="point" type="text" class="form-control" value="{{ old('point') }}">
+                                    <label>Team 2</label>
+                                    <select class="form-select">
+                                        @foreach($teams as $team)
+                                        <option value="{{ $team->name }}">{{$team->name}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Schedule</label>
+                                    <input name="schedule" type="text" class="form-control"
+                                        value="{{ old('schedule') }}">
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Latest Squad</label>
-                                    <input name="latest_squad" type="text" class="form-control"
-                                        value="{{ old('latest_squad') }}">
+                                    <label for="exampleInputEmail1">Description</label>
+                                    <input name="description" type="text" class="form-control"
+                                        value="{{ old('description') }}">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">result</label>
+                                    <input name="result" type="text" class="form-control"
+                                        value="{{ old('result') }}">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">video</label>
+                                    <input name="video" type="text" class="form-control"
+                                        value="{{ old('video') }}">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">venue</label>
+                                    <input name="venue" type="text" class="form-control"
+                                        value="{{ old('venue') }}">
                                 </div>
                                 <div class="form-group">
                                     <button type="submit" class="btn btn-info float-right">Create</button>

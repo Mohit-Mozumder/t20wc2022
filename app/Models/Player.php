@@ -11,4 +11,10 @@ class Player extends Model
     'batting_average', '_50s', '_100s', 'career_best_batting','wickets', 
     '_5_wickets', 'economy', 'career_best_bowling', 'photo', 'career', 
     'team_id', 'slug'];
+
+    public function team_id_object()
+    {
+        return $this->belongsTo(Team::class, 'team_id');
+    }
+    
 }

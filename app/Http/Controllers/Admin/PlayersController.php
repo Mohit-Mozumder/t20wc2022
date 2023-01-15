@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Player;
+use App\Models\Team;
 
 class PlayersController extends Controller
 {
@@ -15,7 +16,7 @@ class PlayersController extends Controller
     public function index()
     {
         $players = Player::all();
-        return view('admin.players.index', compact('players'));
+        return view('admin.players.index', compact('players','teams'));
     }
 
     /**
@@ -23,9 +24,10 @@ class PlayersController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        return view('admin.players.create');
+        $teams = Team::all();
+        return view('admin.players.create', compact('teams'));
     }
 
     /**
@@ -89,7 +91,8 @@ class PlayersController extends Controller
     public function edit($id)
     {
         $players = Player::find($id);
-        return view('admin.players.edit', compact('players'));
+        $teams = Team::all();
+        return view('admin.players.edit', compact('players','teams'));
     }
 
     /**

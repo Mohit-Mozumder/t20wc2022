@@ -29,46 +29,85 @@
                                 <div class="form-group">
                                     <label>Match Name</label><br>
                                     <select class="form-select">
-                                        <option value="{{ $match->id }}">{{$match->description}}</option>
+                                        <option value="{{ $matches->id }}">{{$matches->description}}</option>
                                     </select>
                                 </div>
                                 <div class="form-group">
                                     <label>Batting Team Name</label><br>
                                     <select class="form-select">
-                                        <option value="{{ $match->team_1_object->id }}">{{$match->team_1_object->name}}
+                                        <option value="{{ $matches->team_1_object->id }}">
+                                            {{$matches->team_1_object->name}}
                                         </option>
-                                        <option value="{{ $match->team_2_object->id }}">{{$match->team_2_object->name}}
+                                        <option value="{{ $matches->team_2_object->id }}">
+                                            {{$matches->team_2_object->name}}
                                         </option>
                                     </select>
                                 </div>
-                                <div class="form-group">
+                                <!-- <div class="form-group">
                                     <label for="exampleInputEmail1">strike_player_id</label>
                                     <input name="strike_player_id" type="text" class="form-control"
                                         value="{{ old('strike_player_id') }}">
-                                </div>
+                                </div> -->
                                 <div class="form-group">
+                                    <label>Striker Player Name</label><br>
+                                    <select class="form-select">
+                                        @foreach($players as $player)
+                                        <option value="{{ $player->id }}">{{ $player->name }}
+                                        </option>
+                                        @endforeach
+                                    </select>
+                                </div>
+
+                                <!-- <div class="form-group">
                                     <label for="exampleInputEmail1">non_strike_player_id</label>
                                     <input name="non_strike_player_id" type="text" class="form-control"
                                         value="{{ old('non_strike_player_id') }}">
-                                </div>
+                                </div> -->
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">over</label>
-                                    <input name="over" type="text" class="form-control" value="{{ old('over') }}">
+                                    <label for="exampleInputEmail1">Over</label>
+                                    <input name="wide" type="text" class="form-control" value="{{ old('wide') }}">
                                 </div>
+
                                 <div class="form-group">
+                                    <label>Non Striker Player Name</label><br>
+                                    <select class="form-select">
+                                        @foreach($players as $player)
+                                        <option value="{{ $player->id }}">{{ $player->name }}
+                                        </option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <!-- <div class="form-group">
                                     <label for="exampleInputEmail1">bowler_id</label>
                                     <input name="bowler_id" type="text" class="form-control"
                                         value="{{ old('bowler_id') }}">
+                                </div> -->
+                                <div class="form-group">
+                                    <label>Bowler Name</label><br>
+                                    <select class="form-select">
+                                        @foreach($players as $player)
+                                        <option value="{{ $player->id }}">{{ $player->name }}
+                                        </option>
+                                        @endforeach
+                                    </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">out_player_id</label>
-                                    <input name="out_player_id" type="text" class="form-control"
-                                        value="{{ old('out_player_id') }}">
+                                    <label>Out Player Name</label><br>
+                                    <select class="form-select">
+                                        @foreach($players as $player)
+                                        <option value="{{ $player->id }}">{{ $player->name }}
+                                        </option>
+                                        @endforeach
+                                    </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">wicket_taker_id</label>
-                                    <input name="wicket_taker_id" type="text" class="form-control"
-                                        value="{{ old('wicket_taker_id') }}">
+                                    <label>Wicket taker Name</label><br>
+                                    <select class="form-select">
+                                        @foreach($players as $player)
+                                        <option value="{{ $player->id }}">{{ $player->name }}
+                                        </option>
+                                        @endforeach
+                                    </select>
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">bowling_speed</label>

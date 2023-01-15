@@ -34,7 +34,7 @@
                     <tbody>
                         @foreach($matches as $match)
                         <tr>
-                            <td>{{ $match->team_1 }} Vs {{ $match->team_2 }}</td>
+                            <td>{{ $match->team_1_object->name }} Vs {{ $match->team_2_object->name }}</td>
                             <td>{{ $match->schedule }}</td>
                             <td>{{ $match->venue }}</td>
                             <td> <a href="{{route('admin.matches.edit', $match->id)}}">Edit</a> </td>

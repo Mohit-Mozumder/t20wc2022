@@ -5,6 +5,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Score;
 use App\Models\Match;
+use App\Models\Player;
+use App\Models\Team;
 
 class ScoreController extends Controller
 {
@@ -27,8 +29,14 @@ class ScoreController extends Controller
      */
     public function create(Request $request)
     {
-        $match = Match::find($request->match_id);
-        return view('admin.scores.create', compact('match'));
+        $matches = Match::find($request->match_id);
+        $teams  = Team::where('id', $matches->team_1)
+                        -> orwhere('id', $matches->team_2)
+                        -> get();
+        $players = Player::where('team_id', $matches->team_1)
+                           -> orwhere('team_id', $matches->team_2)
+                           -> get();
+        return view('admin.scores.create', compact('matches','teams','players'));
     }
 
     /**

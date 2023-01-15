@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
-
+use App\Models\News;
 use Illuminate\Http\Request;
 
 class NewsController extends Controller
@@ -14,7 +14,8 @@ class NewsController extends Controller
      */
     public function index()
     {
-        return "done";
+        $news = News::all();
+        return view('admin.news.index', compact('news'));
     }
 
     /**
@@ -24,7 +25,7 @@ class NewsController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.news.create');
     }
 
     /**
@@ -35,7 +36,18 @@ class NewsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title' => ['required'],
+            'description' => ['required'],
+            'image' => ['required'],
+             
+        ]);
+
+        if (News::create($request->all())) {
+            return redirect(route('admin.news.index'))->with(['success' => 'news added successfully']);
+        } else {
+            return back()->with(['error' => 'Something went wrong!!! Please try again']);
+        }
     }
 
     /**
@@ -46,7 +58,8 @@ class NewsController extends Controller
      */
     public function show($id)
     {
-        //
+        $news = News::find($id);
+        return view('admin.news.show', compact('news'));
     }
 
     /**
@@ -57,7 +70,8 @@ class NewsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $news = News::find($id);
+        return view('admin.news.edit', compact('news'));
     }
 
     /**
@@ -69,7 +83,15 @@ class NewsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $news = News::find($id);
+        $news->title = $request->title;
+        $news->description = $request->description;
+        $news->image = $request->image;
+        if ($news->save()) {
+            return redirect(route('admin.news.edit', $news->id))->with(['success' => 'Updated successfully']);
+        } else {
+            return back()->with(['error' => 'Something went wrong!!! Please try again']);
+        }
     }
 
     /**
@@ -80,6 +102,11 @@ class NewsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $news = News::find($id);
+        if ($news->delete()) {
+            return redirect(route('admin.news.index', $news->id))->with(['success' => 'Deleted successfully']);
+        } else {
+            return back()->with(['error' => 'Something went wrong!!! Please try again']);
+        }
     }
 }

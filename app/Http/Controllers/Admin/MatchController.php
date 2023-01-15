@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Match;
+use App\Models\Team;
 
 class MatchController extends Controller
 {
@@ -25,7 +26,8 @@ class MatchController extends Controller
      */
     public function create()
     {
-        return view('admin.matches.create');
+        $teams = Team::all();
+        return view('admin.matches.create',compact('teams'));
     }
 
     /**
@@ -85,9 +87,12 @@ class MatchController extends Controller
     public function update(Request $request, $id)
     {
          $matches = Match::find($id);
-         $matches->name = $request->name;
-         $matches->point = $request->point;
-         $matches->latest_squad = $request->latest_squad;
+         $matches->team_1 = $request->team_1;
+         $matches->team_2 = $request->team_2;
+         $matches->schedule = $request->schedule;
+         $matches->description = $request->description;
+         $matches->result = $request->result;
+         $matches->venue = $request->venue;
         if ( $matches->save()) {
             return redirect(route('admin.matches.edit',  $matches->id))->with(['success' => 'Updated successfully']);
         } else {

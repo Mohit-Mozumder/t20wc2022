@@ -91,9 +91,8 @@
         </a>
         <div id="collapseThree" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="buttons.html">Add New News</a>
-                <a class="collapse-item" href="cards.html">Edit News</a>
-                <a class="collapse-item" href="cards.html">View News</a>
+                <a class="collapse-item" href="{{ route('admin.news.create') }}">Add New News</a>
+                <a class="collapse-item" href="{{ route('admin.news.index') }}">View News</a>
             </div>
         </div>
     </li>

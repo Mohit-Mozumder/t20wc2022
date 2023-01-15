@@ -6,6 +6,11 @@ use App\Http\Controllers\Admin\ScoreController;
 use App\Http\Controllers\Admin\PlayersController;
 use App\Http\Controllers\Admin\NewsController;
 use App\Http\Controllers\Admin\AdminController;
+
+use App\Http\Controllers\Frontend\TeamsController;
+use App\Http\Controllers\Frontend\PlayerController;
+use App\Http\Controllers\Frontend\ScheduleController;
+
 use App\Http\Controllers\HomeController;
 /*
 |--------------------------------------------------------------------------
@@ -21,9 +26,10 @@ use App\Http\Controllers\HomeController;
 
 //START OF ADMIN 
 
+//Route::group(['middleware' => ['auth'], 'prefix' => 'admin'], function () {
 
 
-Route::group(['prefix' => 'admin', 'as' => 'admin.'],function (){
+Route::group(['middleware' => ['auth'],'prefix' => 'admin', 'as' => 'admin.'],function (){
     Route::get('/', [AdminController::class, 'index']);
     Route::resource('/teams', Admin\TeamController::class);
     Route::resource('/scores', Admin\ScoreController::class);
@@ -31,6 +37,12 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'],function (){
     Route::resource('/players', Admin\PlayersController::class);
     Route::resource('/matches', Admin\MatchController::class);
 });
+Route::get('/team', [TeamsController::class, 'index'])->name('team');
+Route::get('/player', [PlayerController::class, 'index'])->name('player');
+Route::get('/schedule', [ScheduleController::class, 'index'])->name('schedule');
+Route::get('/players/{id}', [PlayerController::class, 'show'])->name('frontend.player.show');
+//Route::get('/player', [PlayersController::class, 'index']);
+//Route::get('/schedule', [TeamsController::class, 'index']);
 
 
 //END OF ADMIN 
