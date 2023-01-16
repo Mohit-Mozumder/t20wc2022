@@ -10,7 +10,7 @@
         <div class="container-fluid">
 
             <!-- Page Heading -->
-            <h1 class="h3 mb-4 text-gray-800">Schedules</h1>
+            <h1 class="h3 mb-4 text-gray-800" style="text-align:center;">Schedules</h1>
             <table class="table table-striped">
                 <thead>
                     <tr>

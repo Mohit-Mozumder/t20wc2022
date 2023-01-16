@@ -21,12 +21,11 @@
             <div class="container-fluid">
                 @include('admin.includes.flash_message')
                 <!-- Page Heading -->
-                <h1 class="h3 mb-4 text-gray-800">All news</h1>
                 <h1 class="h3 mb-4 text-gray-800">All News</h1>
                 <table class="table table-striped">
                     <thead>
                         <tr>
-                            <th>Photo</th>
+                            
                             <th>Title</th>
                             <th>Action</th>
                         </tr>
@@ -34,7 +33,7 @@
                     <tbody>
                         @foreach($news as $news)
                         <tr>
-                            <td>{{ $news->photo }}</td>
+                           
                             <td>{{ $news->title }}</td>
                             <td> <a href="{{route('admin.news.show', $news->id)}}">More info</a> </td>
                             <td> <a href="{{route('admin.news.edit', $news->id)}}">Edit</a> </td>

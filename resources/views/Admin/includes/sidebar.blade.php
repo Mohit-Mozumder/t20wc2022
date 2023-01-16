@@ -20,20 +20,6 @@
 
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSix" aria-expanded="true"
-            aria-controls="collapseSix">
-            <i class="fas fa-fw fa-cog"></i>
-            <span>Live Score</span>
-        </a>
-        <div id="collapseSix" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="{{ route('admin.scores.create') }}">a</a>
-                <a class="collapse-item" href="{{ route('admin.scores.create') }}">b</a>
-            </div>
-        </div>
-    </li>
-
-    <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
             aria-controls="collapseOne">
             <i class="fas fa-fw fa-cog"></i>
@@ -93,21 +79,6 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item" href="{{ route('admin.news.create') }}">Add New News</a>
                 <a class="collapse-item" href="{{ route('admin.news.index') }}">View News</a>
-            </div>
-        </div>
-    </li>
-
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true"
-            aria-controls="collapseFour">
-            <i class="fas fa-fw fa-cog"></i>
-            <span>Videos</span>
-        </a>
-        <div id="collapseFour" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="buttons.html">Add New Videos</a>
-                <a class="collapse-item" href="cards.html">Edit Videos</a>
-                <a class="collapse-item" href="cards.html">View Videos</a>
             </div>
         </div>
     </li>

@@ -1,7 +1,7 @@
 
 <div id="containerfrontpage">
         <div id="box2">
-            <h2 class="havehave">LATEST NEWS</h2>
+            <h3 class="havehave"><i><strong>&nbsp;&nbsp;LATEST NEWS</strong></i></h3>
             <p class="class30">Perth Scorchers lose Bash Boost point for fielding ineligible player</p>
             <p class="time1">1h ago</p>
             <div class="line"></div>
@@ -92,10 +92,10 @@
         </div>
 
         <div id="box3">
-            <p class="newbox3">INDIA'S TOUR OF SOUTH AFRICA, 2021-22</p>
+            <p class="newbox3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;INDIA'S TOUR OF SOUTH AFRICA, 2021-22</p>
             <img width="400px" class="haveto2"
                 src="https://www.cricbuzz.com/a/img/v1/420x235/i1/c224838/subplots-drive-the-interest-in.jpg" alt="">
-            <h1 class="newh1fordiv">Subplots drive the interest in second-tier ODI series</h1>
+            <h3 class="newh1fordiv">&nbsp;&nbsp;&nbsp;&nbsp;Subplots drive the interest in &nbsp;&nbsp;&nbsp;&nbsp;second-tier ODI series</h3>
             <p class="newbox3">With an eye in his workload management, the hosts have released pace spearhead Rabada
                 from
                 the ODI squad</p>
@@ -174,18 +174,16 @@
         </div>
 
         <div id="box4">
-            <img width="330px" class="imgdivand"
-                src="https://static.clmbtech.com/ctn/29726/images/24/9251451367c467a89a7c499ec5e13e05_1632474563480_0.webp"
-                alt="">
+          
             <div class="lineline"></div>
-            <h3 class="havehave">FEATURED VIDEOS</h3>
+            <h3 class="havehave">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i><strong>FEATURED VIDEOS</strong></i></h3>
             <iframe width=90% style="padding-left: 30px;" height="180" src="https://www.youtube.com/embed/gE5V0ILSPmo"
                 title="YouTube video player" frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen></iframe>
             <h4 class="newh1fordiv">South Africa v India: ODI Series Preview
             </h4>
-            <p class="time1">d ago</p>
+            <p class="time1">2d ago</p>
             <iframe width=90% style="padding-left: 30px;" height="180" src="https://www.youtube.com/embed/LQLytDJv1KA"
                 title="YouTube video player" frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

@@ -29,7 +29,9 @@ use App\Http\Controllers\HomeController;
 //START OF ADMIN 
 
     
-Route::get('/login', 'Auth\LoginController@showLoginForm')->name('login');
+Route::get('/login', function () {
+    return view('admin.login');
+})->name('login');
 Route::post('/login', 'Auth\LoginController@login')->name('login');
 Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
 
